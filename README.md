@@ -1,78 +1,64 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Support de cours
+Présentation de Laravel et bases
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Artisan
+Artisan est une interface utilisable en ligne de commande (CLI - Command Line Interface).
 
-## About Laravel
+### Utilisation de base
+Artisan est basé sur PHP, et nécessite donc l'utilisation de la commande "PHP" pour s'en servir.
+Toute commande artisan débute donc par "php artisan".
+La commande "php artisan" seule, affichera l'ensemble des commandes disponibles proposées par Artisan.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Commandes usuelles
+- Création de fichiers : Artisan nous permet de générer des fichiers a l'aide de la commande "make". On doit ensuite interposer le symbole ":", puis spécifier le type de fichier que l'on veut créer.
+- gestion de la base de données : Artisan nous permet de créer, modifier ou supprimer des tables au sein d'une base de données. Il utilise les fichiers de migration, mais n'exécute chaque migration, que sur les fichiers qui n'ont pas déjà été migrés. Pour cela, il faut utiliser la commande "migrate".
+- gestion du cache : Artisan nous permet de nettoyer le cache de manière rapide et simple avec la commande "cache:clear".
+- Affichage des routes : Artisan nous permet d'afficher les routes existantes au sein de l'application avec la commande "route:list".
+- publication des vendors : Artisan nous permet de publier les dépendances et librairies utilisées au sein d'un projet Laravel. Ceci nous permettant de modifier ces librairies et dépendances sans crainte de voir le travail perdue pour cause de mise à jour. la commande étant "vendor:publish"
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Architecture de Laravel
+|- /app
+|----- /Console
+|--------- /Commands : Dossier qui contient toutes les commandes personnalisées créées.
+|----- /Exceptions
+|----- /Http
+|--------- /Controller : Dossier qui contiendra l'ensembe des controleurs
+|------------- controller.php : Controleur de base du framework
+|--------- /Middleware : Dossier qui contiendra l'ensemble des middleware
+|----- /Providers
+|----- User.php : Modèle utilisateur généré automatiquement par Laravel
+|- /bootstrap
+|- /config : Contient les fichiers de configuration de l'application
+|- /database
+|----- /migrations : Contient les fichiers de migrations qui permettent de créer, modifier ou supprimer une ou plusieurs table(s)
+|- /public : dossier d'entrée de l'application
+|----- index.php : point d'entrée de l'application
+|- /ressources
+|----- /lang : dossier qui contient les fichiers de traductions de l'application
+|----- /views : dossier qui contient l'ensemble des vues du projet
+|- /routes
+|----- api.php : fichier pour déclarer les routes relatives à une API
+|----- web.php : fichier pour déclarer les routes relatives à une application web.
+|- /storage
+|- /tests : dossier contenant les tests unitaires & fonctionnels
+|- /vendor : Contient l'ensemble des dépendances du projet (géré par Composer)
+|- composer.json => le fichier qui permet de lister les dépendances
+|- .env => fichier de configuration de l'application
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Etapes d'un CRUD
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Création d'une table en base de données :
+    - Création d'un ou plusieurs fichier(s) de migration avec la commande "php artisan make:migration [NOM_DU_FICHIER_DE_MIGRATION]"
+    - Migration des fichiers grâce à la commande "php artisan migrate"
+2. Création du modèle en lien avec la table créée en base de données :
+    - Création du fichier avec la commande "php artisan make:model [NOM_DU_MODEL]"
+    - Renseignement du nom de la table en lien avec le nouveau modèle grâce à l'attribut : "protected $table="[NOM_DE_LA_TABLE]";"
+    - Renseignement des champs de la table qui peuvent être modifiés grâce au modèle via le tableau unidimensionnel contenu dans l'attribut "protected $fillable=[TABLEAU_DES_CHAMPS]"
+3. Création d'une ou plusieurs route(s)
+    - Ajout de la / des route(s) dans le fichier "/routes/web.php". Renseignement de l'URL attendue, du contrôleur ainsi que de sa méthode qui doit être appelée au matching de l'URL, puis définition d'un nom sur la route pour facilité son utilisation a posteriori.
+4. Création du contrôleur
+    - Création du fichier avec la commande "php artisan make:controller [NOM_DU_CONTROLLER]"
+    - Définition de la / des méthode(s) en lien avec les routes précédemment créées
+    - Penser à retourner les vues à l'issue de chaque méthode du controleur
+5. Création des vues
+    - Pour chaque vue nécessaire, créer un fichier avec l'extension ".blade.php" dans le dossier "/ressources/views/". Nommer ce fichier de telle sorte à pouvoir l'appeler simplement dans les méthodes des contrôleurs.

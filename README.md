@@ -46,7 +46,6 @@ La commande "php artisan" seule, affichera l'ensemble des commandes disponibles 
 |- .env => fichier de configuration de l'application  
 
 ## Etapes d'un CRUD
-
 1. Création d'une table en base de données :
     - Création d'un ou plusieurs fichier(s) de migration avec la commande "php artisan make:migration [NOM_DU_FICHIER_DE_MIGRATION]"
     - Migration des fichiers grâce à la commande "php artisan migrate"

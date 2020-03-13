@@ -61,3 +61,19 @@ La commande "php artisan" seule, affichera l'ensemble des commandes disponibles 
     - Penser à retourner les vues à l'issue de chaque méthode du controleur
 5. Création des vues
     - Pour chaque vue nécessaire, créer un fichier avec l'extension ".blade.php" dans le dossier "/ressources/views/". Nommer ce fichier de telle sorte à pouvoir l'appeler simplement dans les méthodes des contrôleurs.
+
+
+----------------------------------------------------------------------------------------
+Notation :
+1. QCM => COURS
+2. Projet
+    - GROUPE (non obligatoire : 4 maximum)
+    - SUJET : Alternance & Bière
+    - Alternance
+        - BDD utilisateurs
+        - BDD entreprises
+        - BDD contacts (en lien avec les entreprises)
+        - BDD demandes (créer des demandes)
+        - BDD historique (en lien avec les demandes et trié par date)
+        - Faire un système de badge par utilisateur, distingué par des bières, en fonction des recherches effectuées.
+        - Le grand gagnant aura le droit de se faire payer une bière par le reste de la classe !

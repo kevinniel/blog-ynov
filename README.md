@@ -82,7 +82,7 @@ ORM / API :
 1. QCM
 2. Projet
 Se servir du projet Laravel pour réaliser une API qui va renvoyer les données suivantes : 
-    2.1 Liste d'entreprises
-    2.2 Détail d'une entreprise
-    2.3 Détail d'un utilisateur et ses statistiques
+    - Liste d'entreprises
+    - Détail d'une entreprise
+    - Détail d'un utilisateur et ses statistiques
         

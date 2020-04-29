@@ -11,6 +11,7 @@
     <ul>
         @foreach($categories as $category)
         <li>
+            <!-- web.php categories/{id}/show -->
             <a href="{{ route('categories.show', $category->id) }}" title="{{ $category->name }}">{{ $category->name }}</a>
         </li>
         @endforeach

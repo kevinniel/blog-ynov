@@ -53,6 +53,14 @@ class CategoryController extends Controller
         $category->save();
     }
 
+    public function delete($categoryId)
+    {
+        $category = Category::where('id', $categoryId)->first();
+        // suppression, au choix !
+        // $category->destroy();
+        // $category->delete();
+    }
+
 }
 
 

@@ -12,6 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
+        # SELECT * FROM bidules
         return view('categories.index', compact('categories'));
     }
 
@@ -33,4 +34,32 @@ class CategoryController extends Controller
         $category = Category::where('id', $categoryId)->first();
         return view('categories.show', compact('category'));
     }
+
+    public function edit($categoryId)
+    {
+        // récupérer l'élément pour le passer avec la vue (pré-remplissage du formulaire)
+        $category = Category::where('id', $categoryId)->first();
+        // revoie la vue avec le formulaire
+        return view('categories.edit', compact('category'));
+    }
+
+    public function update(Request $request, $categoryId)
+    {
+        // récupérer l'élément à modifier
+        $category = Category::where('id', $categoryId)->first();
+        // on modifie la valeur avec celle du formulaire
+        $category->name = $request->get('name');
+        // on sauvegarde les changements !
+        $category->save();
+    }
+
 }
+
+
+
+
+
+
+
+
+

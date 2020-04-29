@@ -77,3 +77,12 @@ Notation :
         - BDD historique (en lien avec les demandes et trié par date)
         - Faire un système de badge par utilisateur, distingué par des bières, en fonction des recherches effectuées.
         - Le grand gagnant aura le droit de se faire payer une bière par le reste de la classe !
+        
+ORM / API : 
+1. QCM
+2. Projet
+Se servir du projet Laravel pour réaliser une API qui va renvoyer les données suivantes : 
+    2.1 Liste d'entreprises
+    2.2 Détail d'une entreprise
+    2.3 Détail d'un utilisateur et ses statistiques
+        

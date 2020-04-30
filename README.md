@@ -62,6 +62,16 @@ La commande "php artisan" seule, affichera l'ensemble des commandes disponibles 
 5. Création des vues
     - Pour chaque vue nécessaire, créer un fichier avec l'extension ".blade.php" dans le dossier "/ressources/views/". Nommer ce fichier de telle sorte à pouvoir l'appeler simplement dans les méthodes des contrôleurs.
 
+## Relations entre entitées
+
+1. Ajouter une foreign key dans votre base de données pour lier une table "A" à une table "B". Ajouter donc un champs "b_id" dans la table "A". Ensuite, déclarer votre foreign dans la migration grâce à : 
+
+    ```$table->bigInteger('category_id')->unsigned()->nullable();
+    $table->foreign('b_id') 
+        ->references('id')
+        ->on('b');```
+
+
 
 ----------------------------------------------------------------------------------------
 Notation :

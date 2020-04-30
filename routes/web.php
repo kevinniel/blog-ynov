@@ -24,3 +24,7 @@ Route::get('/categories', 'CategoryController@index')->name('categories.index');
 Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
 Route::post('/categories/store', 'CategoryController@store')->name('categories.store');
 Route::get('/categories/{id}/show', 'CategoryController@show')->name('categories.show');
+
+
+Route::get('/comment/{id}/show', 'CommentController@show')->name('comment.show');
+Route::post('/comment/store', 'CommentController@store')->name('comment.store');

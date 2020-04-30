@@ -31,7 +31,7 @@ class CategoryController extends Controller
 
     public function show($categoryId)
     {
-        $category = Category::where('id', $categoryId)->first();
+        $category = Category::where('id', $categoryId)->with('comments')->first();
         return view('categories.show', compact('category'));
     }
 

@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Category;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $user = User::create([
             'name' => "test",
             'email' => "test@gmail.com",
-            'password' => "testtest",
+            'password' => Hash::make("testtest"),
             'api_token' => Str::uuid(),
         ]);
 
